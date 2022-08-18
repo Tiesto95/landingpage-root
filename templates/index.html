@@ -6,6 +6,25 @@
 
 </head>
 <body>
-Как Вас зовут: {{ name }}
+{% if object_list %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>DATE</th>
+        <th>NAME</th>
+        <th>TELEPHONE</th>
+    </tr>
+{% for obj in object_list %}
+   <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order_dt }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+Ничего нет!
+{% endif %}
 </body>
 </html>
