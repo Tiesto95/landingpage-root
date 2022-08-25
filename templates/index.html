@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
 
-</head>
-<body>
-
+{% block content %}
 <form action="{% url 'thanks_page' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -33,5 +28,4 @@
 {% else %}
 Ничего нет!
 {% endif %}
-</body>
-</html>
+{% endblock %}

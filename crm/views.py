@@ -7,7 +7,8 @@ from .forms import OrderForm
 def first_page(request):
     obj = Order.objects.all()
     form = OrderForm()
-    return render(request, './index.html', {'object_list': obj, 'form': form})
+    title = 'Главная страница'
+    return render(request, './index.html', {'object_list': obj, 'form': form, 'title': title})
 
 def thanks_page(request):
     name = request.POST['name']
