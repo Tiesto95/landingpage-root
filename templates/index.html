@@ -6,6 +6,16 @@
 
 </head>
 <body>
+
+<form action="{% url 'thanks_page' %}" method="post">
+    <label>Имя:</label>
+    <input name="name">
+    <label>Телефон:</label>
+    <input name="phone">
+    {% csrf_token %}
+    <button type="submit" >Отправить</button>
+</form>
+
 {% if object_list %}
 <table>
     <tr>
